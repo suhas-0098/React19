@@ -79,6 +79,20 @@ Q: why can't we return multiple elements at the same time?
 
 A: As after JSX is compiled it is converted to normal javascript object, you can't return multiple javascript object at the same time 
 
+Dynamic values in JSX
+----------------------
+- you can add any variables of your component in JSX using {} syntax.
+
+- function MyComponent(){
+    const value ="Hey";
+    return <p>{value}</p>;
+  }
+
+- JSX allows you to write javascript expressions inside curly brace includes operations, function calls, and other javascript expression produce a value.
+
+- return <div>The result is : {1+2+3}</div>;
+
+
 
 
 
