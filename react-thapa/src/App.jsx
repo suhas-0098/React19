@@ -1,12 +1,12 @@
 import { Component } from "react"
 
 export const App = () =>{
-  return <div>
+  return <>
     <NetflixSeries/>
     <NetflixSeries/>
     <NetflixSeries/>
     
-  </div>
+  </>
 }
 
 const NetflixSeries = ()=>{

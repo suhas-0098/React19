@@ -63,5 +63,23 @@ There are two ways to create components in React.js:
   return <h1>Hello , {name}!</h1>
 }
 
+React Fragments:
+----------------
+
+- In React.js a component can't return multiple elements without a wrapper div.
+- You can do this to imitate it : Using an array of elements with keys
+- return [<p>Ram</p>,<strong>20</strong>];
+- But it's tedious, to fix this React 16 introduced fragments, which allow components to return multiple elements without adding extra nodes to the DOM.
+- import {  Fragment } from "react"
+  return <Fragment></Fragment>
+- Alternatively, you can also use its shorthand syntax : 
+- <>..... </>
+
+Q: why can't we return multiple elements at the same time?
+
+A: As after JSX is compiled it is converted to normal javascript object, you can't return multiple javascript object at the same time 
+
+
+
 
   
