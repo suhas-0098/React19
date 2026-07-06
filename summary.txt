@@ -1,0 +1,67 @@
+Why React.js?
+-------------
+
+React is the most popular javascript library for building user interfaces.
+componenet based architecture
+declarative UI
+Rich Ecosystem - npm packages 
+Strong Community Support - Online/Github 
+
+
+React 19 in vite
+-----------------
+- npm create vite@latest
+- project name > select a framework > select a variant 
+- cd project 
+- npm install 
+- npm run dev 
+
+command to check update 
+
+- npx npm-check-updates
+
+
+Prerequisite to learn React.js
+-------------------------------
+HTML
+CSS
+JS 
+
+Naming Conventions
+-----------------
+camelCase
+PascalCase
+snake_case
+kebab-case 
+
+What is JSX ?
+-------------
+JSX stands for JavaScript XML. It allows you to write HTML elements in JavaScript and place them in the DOM without any createElement() and appendChild() methods.
+
+React Component ?
+-----------------
+
+In React a component is essentially a Javascript function or class that returns JSX (JavaScript XML), a syntax extension that allows you to write HTML-like code inside JavaScript. Component are the building blocks of any React application, allowing for creation of complex and interactive user interfaces through the assembly of isolated, reusable pieces.
+
+You can also use .js extension with React.js components but it's recommended to use .jsx to differentiate between regular javascript Files and React.js components.
+
+There are two ways to create components in React.js: 
+
+- Class Based components
+  This is how components were created before functional components
+
+  export class Welcome extends Component{
+  render(){
+    return <h1>Hello, {this.props.name}!</h1>
+  }
+}
+
+- Functional components
+  This is modern and recommmended way of writing React.js components.
+
+  export function Welcome({name}){
+  return <h1>Hello , {name}!</h1>
+}
+
+
+  
