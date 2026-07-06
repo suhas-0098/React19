@@ -93,6 +93,17 @@ Dynamic values in JSX
 - return <div>The result is : {1+2+3}</div>;
 
 
+Conditionals values in jsx
+--------------------------
+- you can either return a JSX early or you can use ternary
+  operators for conditionals in JSX
+
+- return <p>{age>=18?"Adult":"Minor"} </p>
+- return <p>{age>=18 && "You can vote"}</p>
+- return <p>{username || "Guest"}</p>
+
+
+
 
 
 
