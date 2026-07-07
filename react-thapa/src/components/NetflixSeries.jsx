@@ -1,25 +1,28 @@
-//named export
+import seriesData  from '../api/seriesData.json'
 export const NetflixSeries = ()=>{
-  let age = 16;
-  const name ="Game of Thrones";
-  const rating = "8.5";
-  const summary ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eum sed autem. Accusantium debitis nemo sequi dolore consequuntur veniam. Sed.";
-  const returnGenre = ()=>{
-    const genre = "RomCom";
-    return genre;
-  }
   return(
-     <div>
+    <>
+    <ul>
+      {seriesData.map((series)=>(
+        <li key={series}>
+          <div>
         <div>
-          <img src="https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_.jpg" alt=""  width= "40%" height="40%"/>
+          <img src={series.img_url} alt=""  width= "40%" height="40%"/>
         </div>
-      <h2>Name : {name}</h2>
-      <h3>Rating: {rating}</h3>
-      <p>Summary : {summary}</p>
-      <p>Genre : {returnGenre()}</p>
-      <button>{age>18 ? "Watch Now":"Not Available"}</button>
-
+      <h2>Name : {series.name}</h2>
+      <h3>Rating: {series.rating}</h3>
+      <p>Summary : {series.description}</p>
+      <p>Genre : {series.genre}</p>
+      <p>Cast : {series.cast}</p>
+      <a href={series.watch_url} target='_blank'>
+       <button>Watch Now</button>
+       </a>
     </div>
+        </li>
+      ))}
+     
+    </ul>
+    </>
   );
 }
 

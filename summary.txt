@@ -121,6 +121,20 @@ When importing named exports, the import names must match
 the export name exactly. Named imports must be enclosed in curly braces.
 
 
+Looping in JSX
+---------------
+- we don't have for loops in JSX, so we have to use 
+.map() method of arrays.
+
+return (
+  <ul>
+  {students.map((student)=>(
+    <li key = {student}>{student}</li>
+  ))}
+  </ul>
+);
+
+- React.js will complain if you don't pass key prop to <li>
 
 
 
