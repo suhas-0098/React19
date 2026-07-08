@@ -36,14 +36,19 @@ kebab-case
 
 What is JSX ?
 -------------
-JSX stands for JavaScript XML. It allows you to write HTML elements in JavaScript and place them in the DOM without any createElement() and appendChild() methods.
+JSX stands for JavaScript XML. It allows you to write HTML elements in JavaScript and
+place them in the DOM without any createElement() and appendChild() methods.
 
 React Component ?
 -----------------
 
-In React a component is essentially a Javascript function or class that returns JSX (JavaScript XML), a syntax extension that allows you to write HTML-like code inside JavaScript. Component are the building blocks of any React application, allowing for creation of complex and interactive user interfaces through the assembly of isolated, reusable pieces.
+In React a component is essentially a Javascript function or class that returns JSX (JavaScript XML),
+a syntax extension that allows you to write HTML-like code inside JavaScript.
+Component are the building blocks of any React application, allowing for creation of complex and interactive 
+user interfaces through the assembly of isolated, reusable pieces.
 
-You can also use .js extension with React.js components but it's recommended to use .jsx to differentiate between regular javascript Files and React.js components.
+You can also use .js extension with React.js components but 
+it's recommended to use .jsx to differentiate between regular javascript Files and React.js components.
 
 There are two ways to create components in React.js: 
 
@@ -69,7 +74,8 @@ React Fragments:
 - In React.js a component can't return multiple elements without a wrapper div.
 - You can do this to imitate it : Using an array of elements with keys
 - return [<p>Ram</p>,<strong>20</strong>];
-- But it's tedious, to fix this React 16 introduced fragments, which allow components to return multiple elements without adding extra nodes to the DOM.
+- But it's tedious, to fix this React 16 introduced fragments, which allow components to 
+  return multiple elements without adding extra nodes to the DOM.
 - import {  Fragment } from "react"
   return <Fragment></Fragment>
 - Alternatively, you can also use its shorthand syntax : 
@@ -77,7 +83,8 @@ React Fragments:
 
 Q: why can't we return multiple elements at the same time?
 
-A: As after JSX is compiled it is converted to normal javascript object, you can't return multiple javascript object at the same time 
+A: As after JSX is compiled it is converted to normal javascript object, 
+you can't return multiple javascript object at the same time 
 
 Dynamic values in JSX
 ----------------------
@@ -88,7 +95,8 @@ Dynamic values in JSX
     return <p>{value}</p>;
   }
 
-- JSX allows you to write javascript expressions inside curly brace includes operations, function calls, and other javascript expression produce a value.
+- JSX allows you to write javascript expressions inside curly brace includes operations, 
+function calls, and other javascript expression produce a value.
 
 - return <div>The result is : {1+2+3}</div>;
 
@@ -152,7 +160,8 @@ Props:
 
 index.css 
 ----------
-This file contains global css styles that apply to the entire application. It allows you to define styles that should be applied globally, affecting all components within the app 
+This file contains global css styles that apply to the entire application. 
+It allows you to define styles that should be applied globally, affecting all components within the app 
 
 
 CSS conditional stylings in react js:
@@ -177,7 +186,8 @@ CSS Modules - Rules to Keep in Mind
 
 - Name your CSS module files with the .module.css or .module.scss extension.
 
-- Import the CSS module file in your React component. Access class names as properties of the imported styles object.
+- Import the CSS module file in your React component.
+  Access class names as properties of the imported styles object.
 
 - Access class names as properties of the imported styles object.
 
@@ -185,7 +195,8 @@ CSS Modules - Rules to Keep in Mind
 
 - Dynamically apply class names based on component state
 
-- When using CSS Modules, class names with hyphens can sometimes cause issues if not acccessed correctly. In CSS modules, you need to use bracket notation for class names with hyphens.
+- When using CSS Modules, class names with hyphens can sometimes cause issues if not acccessed correctly.
+In CSS modules, you need to use bracket notation for class names with hyphens.
 
 - <div className={styles['card-content']}>
 
@@ -193,7 +204,8 @@ CSS Modules - Rules to Keep in Mind
 Styled-Components:
 -------------------
 
-styled-components is a popular JavaScript library for React and React Native that uses a CSS-in-JS approach to let you write actual CSS code directly inside your JavaScript files.
+styled-components is a popular JavaScript library for React and React Native that uses a 
+CSS-in-JS approach to let you write actual CSS code directly inside your JavaScript files.
 
 using Template literals:
 
@@ -207,7 +219,8 @@ const Button = styled.button({
   color:grey,
 });
 
-- In styled-components, you can pass a function within the template literal to dynamically set CSS properties based on props or state.
+- In styled-components, you can pass a function within the template literal 
+to dynamically set CSS properties based on props or state.
 
 Events Handling:
 ----------------
