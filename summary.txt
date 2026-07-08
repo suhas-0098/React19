@@ -160,6 +160,31 @@ CSS conditional stylings in react js:
 
 you can use ternary operators to add conditional stylings to CSS.
 
+CSS Modules:
+------------
 
+- Everytime you import a CSS file in your react component, they are regarded as global CSS.
 
-  
+- CSS Modules help you keep styles specific to the component they're used in.
+
+- Each module encapsulates its styles, preventing unintended style conflicts with other modules.
+
+- The class names in CSS modules are often automatically generated 
+reducing the likelihood of naming clashes.
+
+CSS Modules - Rules to Keep in Mind
+-------------------------------------
+
+- Name your CSS module files with the .module.css or .module.scss extension.
+
+- Import the CSS module file in your React component. Access class names as properties of the imported styles object.
+
+- Access class names as properties of the imported styles object.
+
+- Combine multiple class names using template literals or the class library.
+
+- Dynamically apply class names based on component state
+
+- When using CSS Modules, class names with hyphens can sometimes cause issues if not acccessed correctly. In CSS modules, you need to use bracket notation for class names with hyphens.
+
+- <div className={styles['card-content']}>

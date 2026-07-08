@@ -5,7 +5,8 @@ import { Component } from "react"
 //named import
 import { NetflixSeries } from "./components/NetflixSeries"
 
-import "./components/Netflix.css";
+// import "./components/Netflix.css";
+import './components/Netflix.module.css';
 export const App = () =>{
   return(
 
