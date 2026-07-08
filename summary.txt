@@ -188,3 +188,23 @@ CSS Modules - Rules to Keep in Mind
 - When using CSS Modules, class names with hyphens can sometimes cause issues if not acccessed correctly. In CSS modules, you need to use bracket notation for class names with hyphens.
 
 - <div className={styles['card-content']}>
+
+
+Styled-Components:
+-------------------
+
+styled-components is a popular JavaScript library for React and React Native that uses a CSS-in-JS approach to let you write actual CSS code directly inside your JavaScript files.
+
+using Template literals:
+
+const Button = styled.Button`
+color:grey;
+`;
+
+using Style objects:
+
+const Button = styled.button({
+  color:grey,
+});
+
+- In styled-components, you can pass a function within the template literal to dynamically set CSS properties based on props or state.
