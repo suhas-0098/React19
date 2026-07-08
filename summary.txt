@@ -244,3 +244,16 @@ for example, onClick, onMouseEnter.
 Prefix with 'handle' : it is a common convention to prefix event handler functions with "handle" to clearly indicate their purpose. For example, handleClick, handleChange, handleSummit.
 
 
+Passing event handlers as props:
+-------------------------------
+
+- Passing event handlers as props in React.js is a common pattern used to allow child components to communicate with parent components. This pattern is useful in various scenarios, including: 
+
+- Form Handling: Passing event handlers like onChange or onSubmit to form components allows the child components to update the form data and notify the parent component of changes.
+
+- User Interaction : Event handlers like onclick can be passed to interactive elements(eg. buttons, links) to trigger specific actions in the parent component, such as opening a modal or navigating to a different page.
+
+- State Management : Event handlers can be used to update state in the parent component, which can then be passed down to child components as props to reflect the updated state
+
+- Callback Functions : Event handlers can be used as callback functions to handle asynchronous operations or to update state based on the result of an operation.
+
