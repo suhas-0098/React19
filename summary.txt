@@ -257,3 +257,26 @@ Passing event handlers as props:
 
 - Callback Functions : Event handlers can be used as callback functions to handle asynchronous operations or to update state based on the result of an operation.
 
+
+Event Propagation(journey of an event):
+------------------
+
+- Event propagation refers to the process of how events 
+propagate or travel through the DOM(Document Object Model) hierarchy.
+
+- In javascript, there are two phases of event propagation : capturing phase and bubbling phase
+
+- Capturing Phase : 
+The event starts from the root of the DOM and goes down to the target element.
+
+- Target Phase : The event reaches the target element.
+
+- Bubbling Phase : 
+  The event starts from the target element and bubbles up to the root of the DOM.
+
+- In React.js, event propagation refers to the process by which events propagate or "bubble" up from the target element through its parent elements in the DOM hierarchy. React follows the same event propagation model as regular javascript DOM events.
+
+- When an event occurs on an element in a React component, such as a button click, the event is first captured at the target element and then bubbles up through the parent elements, triggering any event handlers that have been defined along the way. This allows you to handle events at different levels of the component hierarchy.
+
+- React Provides a way to stop event propagation using the stopPropagation method which can be called on the event object within an event handler.
+
