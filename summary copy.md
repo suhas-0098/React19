@@ -1,0 +1,295 @@
+Why React.js?
+-------------
+
+React is the most popular javascript library for building user interfaces.
+componenet based architecture
+declarative UI
+Rich Ecosystem - npm packages 
+Strong Community Support - Online/Github 
+
+
+React 19 in vite
+-----------------
+- npm create vite@latest
+- project name > select a framework > select a variant 
+- cd project 
+- npm install 
+- npm run dev 
+
+command to check update 
+
+- npx npm-check-updates
+
+
+Prerequisite to learn React.js
+-------------------------------
+HTML
+CSS
+JS 
+
+Naming Conventions
+-----------------
+camelCase
+PascalCase
+snake_case
+kebab-case 
+
+What is JSX ?
+-------------
+JSX stands for JavaScript XML. It allows you to write HTML elements in JavaScript and
+place them in the DOM without any createElement() and appendChild() methods.
+
+React Component ?
+-----------------
+
+In React a component is essentially a Javascript function or class that returns JSX (JavaScript XML),
+a syntax extension that allows you to write HTML-like code inside JavaScript.
+Component are the building blocks of any React application, allowing for creation of complex and interactive 
+user interfaces through the assembly of isolated, reusable pieces.
+
+You can also use .js extension with React.js components but 
+it's recommended to use .jsx to differentiate between regular javascript Files and React.js components.
+
+There are two ways to create components in React.js: 
+
+- Class Based components
+  This is how components were created before functional components
+
+  export class Welcome extends Component{
+  render(){
+    return <h1>Hello, {this.props.name}!</h1>
+  }
+}
+
+- Functional components
+  This is modern and recommmended way of writing React.js components.
+
+  export function Welcome({name}){
+  return <h1>Hello , {name}!</h1>
+}
+
+React Fragments:
+----------------
+
+- In React.js a component can't return multiple elements without a wrapper div.
+- You can do this to imitate it : Using an array of elements with keys
+- return [<p>Ram</p>,<strong>20</strong>];
+- But it's tedious, to fix this React 16 introduced fragments, which allow components to 
+  return multiple elements without adding extra nodes to the DOM.
+- import {  Fragment } from "react"
+  return <Fragment></Fragment>
+- Alternatively, you can also use its shorthand syntax : 
+- <>..... </>
+
+Q: why can't we return multiple elements at the same time?
+
+A: As after JSX is compiled it is converted to normal javascript object, 
+you can't return multiple javascript object at the same time 
+
+Dynamic values in JSX
+----------------------
+- you can add any variables of your component in JSX using {} syntax.
+
+- function MyComponent(){
+    const value ="Hey";
+    return <p>{value}</p>;
+  }
+
+- JSX allows you to write javascript expressions inside curly brace includes operations, 
+function calls, and other javascript expression produce a value.
+
+- return <div>The result is : {1+2+3}</div>;
+
+
+Conditionals values in jsx
+--------------------------
+- you can either return a JSX early or you can use ternary
+  operators for conditionals in JSX
+
+- return <p>{age>=18?"Adult":"Minor"} </p>
+- return <p>{age>=18 && "You can vote"}</p>
+- return <p>{username || "Guest"}</p>
+
+
+Import Export in Reactjs
+-------------------------
+1. Default Export and Import
+2. Named Export and Import
+3. Mixed Export and Import 
+
+
+Default Export : A file can have only one default export.
+Default Import : When importing a default export, you can name the import whatever you like 
+
+Named Export : A file can have multiple named exports.
+Each named export must be explicityly exported.
+
+Named Import : 
+When importing named exports, the import names must match 
+the export name exactly. Named imports must be enclosed in curly braces.
+
+
+Looping in JSX
+---------------
+- we don't have for loops in JSX, so we have to use 
+.map() method of arrays.
+
+return (
+  <ul>
+  {students.map((student)=>(
+    <li key = {student}>{student}</li>
+  ))}
+  </ul>
+);
+
+- React.js will complain if you don't pass key prop to <li>
+
+
+Props:
+-----
+
+- React props(properties) facilitate data transfer from parent to child components.
+
+- Data flows unidirectionally, ensuring a clear direction of information in react applications
+
+- Props are immutable, meaning child components cannot modify the data received from parents.
+
+- Child components access props through their function parameter
+
+- You can also pass JSX as props to another component 
+
+index.css 
+----------
+This file contains global css styles that apply to the entire application. 
+It allows you to define styles that should be applied globally, affecting all components within the app 
+
+
+CSS conditional stylings in react js:
+-------------------------------------
+
+you can use ternary operators to add conditional stylings to CSS.
+
+CSS Modules:
+------------
+
+- Everytime you import a CSS file in your react component, they are regarded as global CSS.
+
+- CSS Modules help you keep styles specific to the component they're used in.
+
+- Each module encapsulates its styles, preventing unintended style conflicts with other modules.
+
+- The class names in CSS modules are often automatically generated 
+reducing the likelihood of naming clashes.
+
+CSS Modules - Rules to Keep in Mind
+-------------------------------------
+
+- Name your CSS module files with the .module.css or .module.scss extension.
+
+- Import the CSS module file in your React component.
+  Access class names as properties of the imported styles object.
+
+- Access class names as properties of the imported styles object.
+
+- Combine multiple class names using template literals or the class library.
+
+- Dynamically apply class names based on component state
+
+- When using CSS Modules, class names with hyphens can sometimes cause issues if not acccessed correctly.
+In CSS modules, you need to use bracket notation for class names with hyphens.
+
+- <div className={styles['card-content']}>
+
+
+Styled-Components:
+-------------------
+
+styled-components is a popular JavaScript library for React and React Native that uses a 
+CSS-in-JS approach to let you write actual CSS code directly inside your JavaScript files.
+
+using Template literals:
+
+const Button = styled.Button`
+color:grey;
+`;
+
+using Style objects:
+
+const Button = styled.button({
+  color:grey,
+});
+
+- In styled-components, you can pass a function within the template literal 
+to dynamically set CSS properties based on props or state.
+
+Events Handling:
+----------------
+
+- Event handling in React.js is the process of capturing and responding to user interactions, such as clicks, keystrokes, or form submissions, within a React application. Event handling in React follows a similar pattern to standard JavaScript event handling but with some key difference, such as using synthetic events for cross-browser compatibility and providing consistent event handling across different elements and browsers.
+
+- What is SyntheticBaseEvent in React?
+
+When  you handle events in React, like clicking a button or typing in an input box, React wraps native browser events in something called a SyntheticEvent.
+
+- Here are some widley used React.js events:
+
+1. onClick  : Triggered when an element is clicked.
+2. onChange : Triggered when the value of an input element changes.
+3. onSubmit : Triggered when a form is submitted.
+4. onMouseEnter : Triggered when the mouse pointer enters an element.
+5. onMouseLeave : Triggered when the mouse pointer leaves an element.
+6. onKeyDown : Triggered when a key is pressed down.
+7. onKeyUp   : Triggered when a key is released.
+8. onFocus   : Triggered when an element receives focus.
+9. onBlur    : Triggered when an element loses focus.
+10.onInput   : Triggered when the value of an input element is changed.
+
+- Event Naming Conventions :
+
+camelCase : Events names in JSX should be written in camelCase.
+for example, onClick, onChange, onSubmit.
+
+Prefix with 'on': Event handlers should be prefixed with "on".
+for example, onClick, onMouseEnter.
+
+- Function Naming Conventions :
+
+Prefix with 'handle' : it is a common convention to prefix event handler functions with "handle" to clearly indicate their purpose. For example, handleClick, handleChange, handleSummit.
+
+
+Passing event handlers as props:
+-------------------------------
+
+- Passing event handlers as props in React.js is a common pattern used to allow child components to communicate with parent components. This pattern is useful in various scenarios, including: 
+
+- Form Handling: Passing event handlers like onChange or onSubmit to form components allows the child components to update the form data and notify the parent component of changes.
+
+- User Interaction : Event handlers like onclick can be passed to interactive elements(eg. buttons, links) to trigger specific actions in the parent component, such as opening a modal or navigating to a different page.
+
+- State Management : Event handlers can be used to update state in the parent component, which can then be passed down to child components as props to reflect the updated state
+
+- Callback Functions : Event handlers can be used as callback functions to handle asynchronous operations or to update state based on the result of an operation.
+
+
+Event Propagation(journey of an event):
+------------------
+
+- Event propagation refers to the process of how events 
+propagate or travel through the DOM(Document Object Model) hierarchy.
+
+- In javascript, there are two phases of event propagation : capturing phase and bubbling phase
+
+- Capturing Phase : 
+The event starts from the root of the DOM and goes down to the target element.
+
+- Target Phase : The event reaches the target element.
+
+- Bubbling Phase : 
+  The event starts from the target element and bubbles up to the root of the DOM.
+
+- In React.js, event propagation refers to the process by which events propagate or "bubble" up from the target element through its parent elements in the DOM hierarchy. React follows the same event propagation model as regular javascript DOM events.
+
+- When an event occurs on an element in a React component, such as a button click, the event is first captured at the target element and then bubbles up through the parent elements, triggering any event handlers that have been defined along the way. This allows you to handle events at different levels of the component hierarchy.
+
+- React Provides a way to stop event propagation using the stopPropagation method which can be called on the event object within an event handler.
+
