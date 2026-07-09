@@ -6,17 +6,21 @@ import { Component } from "react"
 import { NetflixSeries } from "./components/NetflixSeries"
 
 // import "./components/Netflix.css";
-import './components/Netflix.module.css';
+// import './components/Netflix.module.css';
+
 import { EventHandling } from "./components/EventHandling";
 import { EventProps } from "./components/EventProps";
 import { State } from "./components/hooks/State";
 import { DerivedState } from "./components/DerivedState";
 import { LiftStateUp } from "./components/LiftStateUp";
+import { Todo } from "./projects/Todo/Todo";
 export const App = () =>{
   return(
 
-     <section className="container">
-   <LiftStateUp/>
+     <section>
+
+      <Todo/>
+   {/* <LiftStateUp/>
    <br />
    <br />
 
@@ -33,7 +37,7 @@ export const App = () =>{
     <NetflixSeries/>
     <EventHandling/>
     <br />
-    <EventProps/>
+    <EventProps/> */}
     
   </section>
   )
