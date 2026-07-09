@@ -434,3 +434,44 @@ React Hooks Rules:
 - You can also create your own custom hooks by creating functions startingn with "use" ensures that react can identify it as a Hook.( useFetch, useForm)
 
 - Ensure Hooks are called in the same order.
+
+Controlled Components:
+----------------------
+
+- Controlled components in React are those where form data is handled by React component state.
+
+- This means :
+
+- State Management : The value of the input field is controlled by React state (useState or this.state in class components).
+
+- Event Handlers : Changes to the input field (like typing into a text field) are handled by React event handlers (onChange, onBlur, etc)
+
+- State Updates : When the user interacts with the form input, React state is updated the event handlers, and the input value reflects the current state value.
+
+- Pros:
+
+- React has complete control over the input values, making it straightforward to implement features like validation and conditional formatiing based on state.
+
+- Easier to handle form submission and integration with React's lifecycle methods.
+
+- Enables clear data flow and centralized state management within React components.
+
+- Cons:
+
+- Requires more code compared to uncontrolled components due to state management.
+
+- Can lead to more re-renders if not optimized, although React handles this efficiently cases.
+
+UnControlled Components:
+------------------------
+
+- Uncontrolled components in react are those where form data is handled by the DOM itself.
+
+- This means:
+
+- Direct DOM Manipulation : The value of the input field is controlled by the DOM(documenet.getElementById,etc.). It's not declarative way right.
+
+- Event Handling : Changes are directly handled by DOM events (onChanges, onBlur, etc)
+
+- Accessing Form Data : Form data is accessed through refs or DOM traversal methods, not through React state.
+
