@@ -375,4 +375,62 @@ This becomes important if your array items can move
 - Rules :
   - Keys must be unique among siblings
   - Keys must not change
-  
+
+
+Short Circuit Evaluation in React.js
+------------------------------------
+
+- Short circuit evaluation is a technique used in javascript (and many other programming languages)
+where expressions are evaluated from left to right.
+In logical operations, evaluation stops as soon as the result is determined. This is often used in React to conditionally render components or excecute code based on the truthiness of certain conditions.
+
+- Rules of short circuit evaluation 
+- Short circuit evaluation involves logical operators (&&,||,??) and how they evaluate expressions based on the truthiness of their operands.
+
+- Logical OR (||)
+
+- syntax : expression1 || expression2
+- rule   : if expression1 is truthy, return expression1.
+           otherwise, return expression2.
+
+- eg : const result = false || "Hello"; // Hello
+       const result = true  || "world"; // true
+
+
+- Logical AND (&&)
+
+- syntax : expression1 && expression2
+- rule   : if expression1 is falsy, return expression1.
+           otherwise, return expression2.
+
+- eg : const result = false && "Hello"; // false
+       const result = true  || "world"; // world
+
+- Nullish Coalescing (??)
+
+- syntax : expression1 ?? expression2
+- rule   : If expression1 is not null or undefined,     return expression1, otherwise, return expression2
+
+- eg : const result = null ?? 'Hello'; // Hello
+       const result = undefined ?? 'World' // World
+       const result = ""?? 'Fallback'; //""
+
+
+React Hooks Rules:
+------------------
+
+- Hooks let you use different React features from your components.
+
+- It starts with use 
+
+- eg : useState, useEffect, useContext, useReducer, useCallback, useMemo, useRef, useLayoutEffect, useDebugValue, useImperativeHandle
+
+- Hooks can only be used at the top level of your component.
+
+- Do not call Hooks inside loops, conditions, or nested functions.
+
+- Call Hooks only from react function components or custom hook. Do not call Hooks from regular javascript functions or in class components.
+
+- You can also create your own custom hooks by creating functions startingn with "use" ensures that react can identify it as a Hook.( useFetch, useForm)
+
+- Ensure Hooks are called in the same order.
