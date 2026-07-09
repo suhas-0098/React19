@@ -293,3 +293,60 @@ The event starts from the root of the DOM and goes down to the target element.
 
 - React Provides a way to stop event propagation using the stopPropagation method which can be called on the event object within an event handler.
 
+
+State in React.JS:
+------------------
+
+- In React, state refers to an object that holds data or information about the component. State managed within the component(just like variable declared in a function). However, unlike regular variables, when state changes, React re-renders the component to reflect these changes keeping the user interface in sync with the data.
+
+- State is dynamic and mutable, meaning it can change over time in response to user actions, server responses, or other events
+
+- syntax : 
+
+const [count,setCount] = useState(0);
+
+const = variable(key)
+count = state variable the current state value
+setCount = a function that updates the state variable
+0 = the initial value of the state
+
+Why do we need state in React?
+------------------------------
+
+1. Dynamic UI Updates : State allows your components to update dynamicallly in response to user input of other events. For exmaple, in a form, the state might hold the current value of the input fields, updating in real-time as the user types.
+
+2. Interactivity : State makes your application interactive. By maintaining state, you can create components that respond to user actions, such as clicks, form submissions, or keyboard inputs.
+
+3. Data Management : State helps manage data within a component. For instance, you can fetch data from an API and store it in the state, which will then be used to render the UI.
+
+4. Component Communication : State can be lifted up to parent components to manage state across multiple child components, ensuring consistent data flow and synchroize
+
+How State works ?
+-----------------
+
+- In React, state is a way to store and manage data that can change over the lifetime of a component. When state changes, React re-renders the component to reflect the new state. This ensures that the user interface stays in sync with the underlying data.
+
+- React Reconciliation is the process through which React updates the Browser DOM.
+
+- The Diffing Algorithm : Diffing short for differences algorithm is used to differentiate the DOM tree for efficient updates.
+
+Why the state value does not reset to its initial value on re-render?
+---------------------------------------------------------------------
+
+The useState hook is smart enough to only use the initial value the very first time of the component renders.
+
+What is Derived State in React?(Improving State Management and Remove Redundancy & Dependency)
+----------------------------------------------------------------------------------------------
+
+- Derived state is any state that can be computed based on other state or props. It is not stored directly in the component's state but is calculated when needed. This approach helps avoid duplication and keeps the state simpler and more manageable.
+
+- ex: const userCount = users.length;
+
+- Benefits of Derived State 
+
+- Avoid Redundancy : By deriving values from existing state, you avoid storing redundate data.
+
+- Consistency : Ensures that derived values are always in sync with the underlying state or props
+
+- Simplicity : Reduces the complexity of state management by minimizing the number of state variables.
+

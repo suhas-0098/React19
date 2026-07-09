@@ -10,10 +10,15 @@ import './components/Netflix.module.css';
 import { EventHandling } from "./components/EventHandling";
 import { EventProps } from "./components/EventProps";
 import { State } from "./components/hooks/State";
+import { DerivedState } from "./components/DerivedState";
 export const App = () =>{
   return(
 
      <section className="container">
+
+  <DerivedState/>
+  <br />
+  <br />
 
       <State/>
    <br />
