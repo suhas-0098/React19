@@ -3,8 +3,19 @@ import "./Index.css";
 
 export const Index = ()=>{
   const [value,setValue]=useState(0);
-  const handleIncrement = () =>{
-    setValue(value+1)
+  const [inputValue,setinputValue] = useState(1);
+  const handleIncrement = (inputValue) =>{
+    setValue(value+Number(inputValue));
+  }
+  const handleDecrement = (inputValue) =>{
+   setValue(value-inputValue);
+  }
+  const handleReset =  () =>{
+    setValue(0)
+    setinputValue(1)
+  }
+  const handleOnChange = (stepValue) =>{
+    setinputValue(stepValue)
   }
   return <>
    <div className="container state-container" style={{textAlign:"center"}}>
@@ -13,7 +24,13 @@ export const Index = ()=>{
     <p>
     {value}
     </p>
-    <button onClick={handleIncrement}>Increment</button>
+     <div>
+      <label htmlFor="step">step : </label>
+      <input type="number" value={inputValue} onChange={(e)=>handleOnChange(e.target.value)} />
+     </div>
+    <button onClick={()=>handleIncrement(inputValue)} disabled={value>=100}>Increment</button>
+    <button onClick={()=>handleDecrement(inputValue)}disabled={value<=0}>Decrement</button>
+    <button onClick={handleReset}>Reset</button>
 
    </div>
   </>
