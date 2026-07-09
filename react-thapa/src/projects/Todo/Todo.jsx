@@ -8,6 +8,7 @@ export const Todo = ()=>{
    const[inputValue,setInputValue]=useState("");
    const[task,setTask] = useState([]);
    const [datetime,setDateTime] = useState("");
+   const [check,setCheck] = useState(false);
 
    const handleAddTask =(value)=>{
    setInputValue(value)
@@ -43,6 +44,18 @@ export const Todo = ()=>{
      const updatedTask = task.filter((cur)=>cur!=value)
      setTask(updatedTask);
    }
+
+  
+   const handleTick = ()=>{
+    if(check==false){
+      setCheck(true) 
+      
+    }else{
+      setCheck(false)
+    }
+    
+    
+   }
    
 
   return (
@@ -73,8 +86,8 @@ export const Todo = ()=>{
           {
             task.map((curTask,index)=>(
                <li key={index} className="todo-item">
-                <span>{curTask}</span>
-                <button className="check-btn"><MdCheck />
+                <span className={check? "checkList" :"notCheckList"}>{curTask}</span>
+                <button className="check-btn" onClick={handleTick}><MdCheck />
                 </button>
                 <button onClick={()=>handleDeleteTask(curTask)} className="delete-btn">
                   <MdDeleteForever/>
