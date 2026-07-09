@@ -11,10 +11,14 @@ import { EventHandling } from "./components/EventHandling";
 import { EventProps } from "./components/EventProps";
 import { State } from "./components/hooks/State";
 import { DerivedState } from "./components/DerivedState";
+import { LiftStateUp } from "./components/LiftStateUp";
 export const App = () =>{
   return(
 
      <section className="container">
+   <LiftStateUp/>
+   <br />
+   <br />
 
   <DerivedState/>
   <br />
