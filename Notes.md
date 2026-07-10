@@ -527,3 +527,16 @@ forwardRef():
 - React forwardRef allows parent components to move down (or forward) refs to their children. It gives a child component a reference to DOM entity created by its parent component in React. This helps the child to read and modify the element from any location where it is used
 
 syntax : React.forwardRef((props,ref)=>{})
+
+useId():
+--------
+
+- useId is a React Hook for generating unique IDs that can be passed to accessibility attributes. It helps to ensure that each instance of a component gets a unique ID, which is useful for associating labels with input fields and other elements
+
+- Syntax : const id = useId()
+
+- Parameters : useId does not take any parameters
+
+- Returns    : useID returns a unique ID string associated with this particular useId call in this particular component.
+
+- Note : useId should not be used to generate keys in a list
