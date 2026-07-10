@@ -599,3 +599,129 @@ useReducer():
 - Reducer Function: A function that takes the current state and an action as arguments, and returns a new state.
 
 - Initial State: The initial state value. (The initial state can be a simple value, an object, or even derived from a function if the initialization is complex)
+
+
+React.memo():
+------------
+
+- The React.memo function is used for memoization of functional components.
+
+- If the props of a memoized components have not changed, React skips the rendering for that component, using the cached result instead.
+
+- Do memoizations only when necessary.
+
+OR 
+
+- React.memo() is a higher-order component that we can use to wrap components that we do not want to re-render unless props within them changes
+
+import { memo } from 'react';
+
+const ProductCard = ({ name, price }) => {
+  console.log("ProductCard rendered");
+  return (
+    <div className="card">
+      <h3>{name}</h3>
+      <p>Price: ${price}</p>
+    </div>
+  );
+};
+
+// Export the memoized version
+export default memo(ProductCard);
+
+
+useMemo Hook :
+--------------
+
+- const memoizedValue = useMemo( ()=>{
+
+  // Your computation logic here
+  return computedValue;
+
+},[dependencies])
+
+- useMemo is a React Hook used for memoization.
+
+- Memoization is a technique to optimize performance by caching the results of expensive function calls.
+
+- Use it when you want to prevent unnecessary re-execution of a function on every render.
+
+- Useful for optimiing performance in situations where calculations or operations are computationally expensive.
+
+- Overusing useMemo might lead to unnecessary complexity and impact readability.
+<!-- 
+import React, { useState, useMemo } from 'react';
+
+function ProductList({ items }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // 1. Memoize the expensive filtering logic
+  const filteredItems = useMemo(() => {
+    console.log("Filtering items..."); // Only logs when items or searchTerm change
+    return items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }, [items, searchTerm]); // Dependency Array
+
+  return (
+    <div className={isDarkMode ? 'dark' : 'light'}>
+      <input 
+        type="text" 
+        value={searchTerm} 
+        onChange={(e) => setSearchTerm(e.target.value)} 
+        placeholder="Search..."
+      />
+      <button onClick={() => setIsDarkMode(!isDarkMode)}>
+        Toggle Theme
+      </button>
+      
+      <ul>
+        {filteredItems.map(item => <li key={item.id}>{item.name}</li>)}
+      </ul>
+    </div>
+  );
+} -->
+
+useCallback Hook:
+------------------
+
+- The useCallback hook caches a function definition between component re-renders to optimize performance.
+
+import { useCallback } from 'react';
+
+const cachedFn = useCallback(() => {
+  // Your function logic goes here
+  console.log(dependency);
+}, [dependency]); // The dependency array
+
+<!-- import React, { useState, useCallback, memo } from 'react';
+
+// 1. Optimized child component using React.memo
+const ShippingButton = memo(({ onClick }) => {
+  console.log("Child button re-rendered!");
+  return <button onClick={onClick}>Calculate Shipping</button>;
+});
+
+export default function OrderForm() {
+  const [itemsCount, setItemsCount] = useState(1);
+  const [theme, setTheme] = useState('light');
+
+  // 2. Cache the function. It only recreates if itemsCount changes.
+  const handleShippingCalculation = useCallback(() => {
+    console.log(`Calculating shipping for ${itemsCount} items.`);
+  }, [itemsCount]); 
+
+  return (
+    <div className={theme}>
+      {/* Changing this theme state WILL NOT cause the ShippingButton to re-render */}
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        Toggle Theme
+      </button>
+      
+      <p>Items in cart: {itemsCount}</p>
+      <button onClick={() => setItemsCount(prev => prev + 1)}>+</button>
+
+      {/* Passing the stable memoized callback function */}
+      <ShippingButton onClick={handleShippingCalculation} />
+    </div>
+  );
+} -->
