@@ -1,10 +1,12 @@
+import { Challenge } from "./components/hooks/useEffect/EffectChallenge"
 import { ReactUseEffect } from "./components/hooks/useEffect/Index"
 import { Index } from "./components/hooks/useState/Index"
 
 export const App = () =>{
   return <>
    {/* <Index/> */}
-   <ReactUseEffect/>
+   {/* <ReactUseEffect/> */}
+   <Challenge/>
   </>
 }
 
