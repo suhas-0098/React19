@@ -574,3 +574,16 @@ ContextAPI:
 - Consuming Context Data : To access the context data, we use the useContext hook. As a parameter, we pass the entire context to useContext to access all values provided by the Provider.
 
 - In the Context API, the data provided by a context can only be accessed by the components that are its children within the component tree. This means that any component that needs access to the context data must be a descendant of the provider component that supplies the context value.
+
+Rules for Custom Hooks :
+------------------------
+
+- Creating custom hooks in React is a powerful way to encapsulate logic and make your components cleaner and more maintainable.
+
+1. Prefix with use : Custom hooks must start with the word use. This convention ensures that hooks are easily identifiable and adhere to the hook rules.
+
+2. Use Built-in Hooks : Custom hooks should utilize React's built-in hooks (eg..useState,useEffect,useContext) to leverage React's state and lifecyle features.
+
+3. Avoid side effects outside hooks : side effects (eg. data fetching, subscriptions) should be managed within hooks using useEffect or other appropriate hooks.
+
+4. Keep Hooks Pure : Hooks should be free from side effects and return values or function that the component can use.
