@@ -475,3 +475,37 @@ UnControlled Components:
 
 - Accessing Form Data : Form data is accessed through refs or DOM traversal methods, not through React state.
 
+
+useEffect Hook:
+---------------
+
+- The useEffect hook in React is used for handling side effects in functional components.
+
+- syntax : 
+
+  useEffect(()=>{
+     // your side effect code here
+
+    return ()=>{
+    // Cleanup code here (optional)
+    };
+  },[dependencies]);
+
+1. Initial Render : When the componenet mounts, useEffect can run its effect function to perform operations like data fetching.
+
+2. Dependencies : The second argument, an array of dependencies, which determines when effect should re-run. If any value in this arrray changes, the effect will re-run
+
+3. Cleanup : useEffect can return a cleanup function to clean up after the effect , such as unsubscribing from an event or clearing a timer.
+
+4. A side effect is any operation that affects something outside the scope of a function(Pure function). In React, side effects are managed using hooks like useEffect to ensure they are handled in a controlled and predictable mananer. This includes tasks like :
+
+  - Fetching data as a side effect
+  - When you fetch data in a react component, you're performing a side efffect because : 
+  - External interactions: You're interacting with an external data source, such as an API or a server.
+  - State Updates: The fetched data will usually update the component's state, causing a re-render.
+  - Subscribing to or unsubscribing from a service.
+  - Updating the browser's DOM
+  - Logging data to the console
+  
+
+
