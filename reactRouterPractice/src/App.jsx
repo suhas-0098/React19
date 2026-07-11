@@ -26,7 +26,7 @@ function App() {
   <h1>Hello from APP</h1>
   {/* <RouterProvider router={router}/> */}
   <nav>
-    <NavLink to="/home" style={myNavStyle}>Home</NavLink> | {" "}
+    <NavLink to="/" style={myNavStyle}>Home</NavLink> | {" "}
     <NavLink to="/about" style={myNavStyle}>About</NavLink> | {" "}
     <NavLink to="/contactus" style={myNavStyle}>Contact</NavLink>
   </nav>

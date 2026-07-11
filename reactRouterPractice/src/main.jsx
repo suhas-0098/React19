@@ -6,16 +6,20 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import ContactUs from './pages/ContactUs.jsx'
+import NotFound from './pages/NotFound.jsx'
+import { RedirectPage } from './pages/RedirectPage.jsx'
 
 const router = createBrowserRouter([
     {
       path:"/",
       element:<App/>, 
+      errorElement:<NotFound/>,
       children :[
-      {path:"home",element:<Home/>},
+      {path:"/",element:<Home/>},
       {path:"about",element:<About/>},
       {path:"contactus",element:<ContactUs/>},
-      {path :"*",element : <h1>Not Found</h1>}
+      {path:"*",element:<NotFound/>},
+      {path:"home",element:<RedirectPage/>},
 
       ]},
     
