@@ -725,3 +725,20 @@ export default function OrderForm() {
     </div>
   );
 } -->
+
+
+React Router 7 Setup :
+----------------------
+
+- What is routing ? why React Router ?
+
+- SPA vs MPA
+
+- Installation of React Router 
+
+ npm create vite@latest
+ npm i react-router
+
+- Setup of React project with react-router v7
+
+- Browser Router Setup
