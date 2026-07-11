@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import {createBrowserRouter, Link, Outlet, RouterProvider} from "react-router";
+import {createBrowserRouter, Link, NavLink, Outlet, RouterProvider} from "react-router";
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import About from './pages/About'
@@ -16,13 +16,19 @@ function App() {
   //   {path:"/pages/contactus",element:<ContactUs/>}
   // ]);
 
+  const myNavStyle = ({isActive}) =>({
+    fontWeight: isActive ? "bold" :"normal",
+    color: isActive ? "green" : "blue",
+    textDecoration : "none",
+  })
+
   return <>
   <h1>Hello from APP</h1>
   {/* <RouterProvider router={router}/> */}
   <nav>
-    <Link to="/home">Home</Link> | {" "}
-    <Link to="/about">About</Link> | {" "}
-    <Link to="/contactus">Contact</Link>
+    <NavLink to="/home" style={myNavStyle}>Home</NavLink> | {" "}
+    <NavLink to="/about" style={myNavStyle}>About</NavLink> | {" "}
+    <NavLink to="/contactus" style={myNavStyle}>Contact</NavLink>
   </nav>
   <Outlet/>
   </>

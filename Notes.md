@@ -750,3 +750,15 @@ Basic Routing :
 - Create Simple components(Home, About,Contact)
 - Add createBrowserRouter and RouterProvider
 - Navigate between pages using <RouterProvider> and <Link>
+
+Basic Routing - via Navlink :
+----------------------------
+
+
+- Create Simple components(Home, About,Contact)
+- Add createBrowserRouter and RouterProvider
+- Navigate between pages using <RouterProvider> and <NavLink>
+
+Q1: What is the difference between Link and NavLink in React Router?
+
+A: Both render an <a> tag and perform client-side navigation without a full page reload. The difference is that NavLink is aware of whether its target route matches the current URL and exposes that as an isActive state (also isPending/isTransitioning), letting you style the "current" link differently — e.g., bold text or a highlighted background in a nav bar. NavLink also auto-applies an active class by default. Link has no such awareness — it's used for plain navigation where highlighting the current page doesn't matter.
