@@ -742,3 +742,11 @@ React Router 7 Setup :
 - Setup of React project with react-router v7
 
 - Browser Router Setup
+
+
+Basic Routing :
+----------------
+
+- Create Simple components(Home, About,Contact)
+- Add createBrowserRouter and RouterProvider
+- Navigate between pages using <RouterProvider> and <Link>
