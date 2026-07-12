@@ -769,3 +769,60 @@ A: Both render an <a> tag and perform client-side navigation without a full page
 - Write 404 HTML
 - Add Router
 - Redirect Page
+
+
+Nested Routes :
+----------------
+
+- How to create routes inside routes
+- Outlet component
+- Example : /dashboard/settings, /dashboard/profile
+
+URL Parameters - Dynamic Routes :
+---------------------------------
+
+- Create dynamic routes (eg.,/user/:id)
+- Read params using useParams
+- use case : User profile or product page
+
+{path:"/user/:id",element : <user/>}
+
+export const user = () =>{
+   const {id} = useParams();
+   return <> user id = {id} </>
+}
+
+<Link to="user/101"> user 101</Link>
+
+Route Protection (Private Routes):
+----------------------------------
+
+- Create authentication context
+- Create ProtectedRoute wrapper
+- Use Navigate for redirection
+
+useLocation Hook:
+-------------------
+
+- What is useLocation() ?
+- When do we use it?
+- How to use it? (import, use)
+- Location object structure : 
+  (pathname,search,hash,state,key)
+
+
+useSearchParams Hook:
+---------------------
+
+- What is useSearchParams() ?
+- How to read query params 
+- How to set query params
+- Example of search / filter component
+
+
+Laxy Loading & Code Splitting :
+---------------------------------
+
+- use React lazy + Suspense
+- Code splitting routes
+- Optimize large apps with examples
